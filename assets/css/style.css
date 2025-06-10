@@ -746,7 +746,7 @@ main {
 
 .clients-list {
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   align-items: center!important;
   gap: 15px;
   margin: 0 -15px;
