@@ -888,7 +888,7 @@ main {
 
 
 /*-----------------------------------*\
-  #PORTFOLIO
+  #WORKS
 \*-----------------------------------*/
 
 .filter-list { display: none; }
@@ -967,13 +967,54 @@ main {
   100% { transform: scale(1); }
 }
 
+/* Modal Container */
+.modal {
+  display: none;
+  align-content: center;
+  position: fixed;
+  z-index: 1000;
+  padding: 2rem 1rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+/* Modal Image */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 90vw;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #f3c411;
+}
+
 .project-item > a { width: 100%; }
 
 .project-img {
   position: relative;
   width: 100%;
   height: 200px;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   overflow: hidden;
   margin-bottom: 15px;
 }
@@ -988,6 +1029,14 @@ main {
   background: transparent;
   z-index: 1;
   transition: var(--transition-1);
+}
+
+.project-img img {
+  transition: transform 0.3s ease;
+}
+
+.project-img:hover img {
+  transform: scale(1.05);
 }
 
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
@@ -1260,8 +1309,34 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG 
+   * #WORKS, BLOG 
    */
+
+  @media (max-width: 768px) {
+  .modal-content {
+    max-width: 95vw;
+    max-height: 230%;
+  }
+
+  .close {
+    font-size: 2rem;
+    top: 0.8rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 100vw;
+    max-height: 200%;
+  }
+
+  .close {
+    font-size: 1.8rem;
+    top: 0.5rem;
+    right: 0.8rem;
+  }
+}
 
   .project-img,
   .blog-banner-box { height: auto; }
@@ -1519,10 +1594,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG
+   * #WORKS, BLOG
    */
 
-  .project-img, .blog-banner-box { border-radius: 16px; }
+  /* .project-img, .blog-banner-box { border-radius: 16px; } */
 
   .blog-posts-list { gap: 30px; }
 
@@ -1612,7 +1687,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * PORTFOLIO
+   * WORKS
    */
 
   .article-title { padding-bottom: 20px; }
@@ -1638,7 +1713,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-item button.active { color: var(--orange-yellow-crayola); }
 
-  /* portfolio and blog grid */
+  /* works and blog grid */
 
   .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
 
@@ -1757,7 +1832,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * PORTFOLIO
+   * WORKS
    */
 
   .project-list { grid-template-columns: repeat(3, 1fr); }
